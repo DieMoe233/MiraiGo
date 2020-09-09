@@ -244,9 +244,9 @@ func (c *QQClient) parseTempMessage(msg *msg.Message) *message.TempMessage {
 
 func (c *QQClient) parseGroupMessage(m *msg.Message) *message.GroupMessage {
 	group := c.FindGroup(m.Head.GroupInfo.GroupCode)
-	if group == nil {
-		return nil
-	}
+	//if group == nil {
+	//	return nil
+	//}
 	var anonInfo *msg.AnonymousGroupMessage
 	for _, e := range m.Body.RichText.Elems {
 		if e.AnonGroupMsg != nil {
